@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micromercado La 40 - Gestión de Usuarios</title>
+    <link rel="stylesheet" href="../style/usuarios.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="../../img/logo1.png" width="50%" alt="Logo Micromercado La 40">
+            </div>
+
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item"><i data-lucide="home"></i> Inicio</a>
+                <a href="productos.html" class="nav-item "><i data-lucide="package"></i> Productos</a>
+                <a href="inventario.html" class="nav-item"><i data-lucide="archive"></i> Inventario</a>
+                <a href="nueva_entrada.html" class="nav-item"><i data-lucide="arrow-left-right"></i> Entradas</a>
+                <a href="nueva_salida.html" class="nav-item"><i data-lucide="arrow-up-right"></i> Salidas</a>
+                <a href="reportes.html" class="nav-item "><i data-lucide="bar-chart-3"></i> Reportes</a>
+                <a href="usuarios.html" class="nav-item active"><i data-lucide="users"></i> Usuarios</a>
+                <a href="configuracion.html" class="nav-item"><i data-lucide="settings"></i> Configuración</a>
+            </nav>
+
+            <button class="logout-btn">
+                <i data-lucide="log-out"></i> Cerrar sesión
+            </button>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="welcome-text">
+                    <h1>Gestión de Usuarios</h1>
+                    <p>Administra las cuentas de acceso del personal (Administradores y Empleados).</p>
+                </div>
+                <div class="user-profile">
+                    <div class="profile-info">
+                        <div class="avatar"><i data-lucide="user"></i></div>
+                        <span id="nombre-usuario">Usuario</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="kpi-grid">
+                <div class="card kpi-card">
+                    <div class="kpi-icon icon-users">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <div class="kpi-info">
+                        <h3>Usuarios Totales</h3>
+                        <p class="kpi-value" id="kpi-total">0</p>
+                    </div>
+                </div>
+                <div class="card kpi-card">
+                    <div class="kpi-icon icon-admin">
+                        <i data-lucide="shield-check"></i>
+                    </div>
+                    <div class="kpi-info">
+                        <h3>Administradores</h3>
+                        <p class="kpi-value" id="kpi-admin">0</p>
+                    </div>
+                </div>
+                <div class="card kpi-card">
+                    <div class="kpi-icon icon-employee">
+                        <i data-lucide="user-check"></i>
+                    </div>
+                    <div class="kpi-info">
+                        <h3>Empleados</h3>
+                        <p class="kpi-value" id="kpi-emp">0</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="toolbar">
+                <div class="filters-container">
+                    <div class="search-container">
+                        <i data-lucide="search" class="search-icon"></i>
+                        <input type="text" id="search-user" placeholder="Buscar usuario por nombre o correo...">
+                    </div>
+                    <div class="select-wrapper">
+                        <select id="filter-role">
+                            <option value="todos">Todos los roles</option>
+                            <option value="Administrador">Administradores</option>
+                            <option value="Empleado">Empleados</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="btn-nuevo-usuario">
+                    <i data-lucide="plus"></i> Nuevo Usuario
+                </button>
+            </section>
+
+            <section class="card table-container">
+                <table class="user-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Correo Electrónico</th>
+                            <th>Teléfono</th>
+                            <th>Rol</th>
+
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- Las filas se inyectan dinámicamente aquí -->
+                    </tbody>
+                </table>
+            </section>
+
+
+
+            <footer class="footer">
+                <div class="footer-content">
+                    <span class="leaf-left">🌿</span>
+                    <p>&copy; 2026 Micromercado La 40. Todos los derechos reservados.</p>
+                    <span class="leaf-right">🌿</span>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../../backend/usuarios.js"></script>
+</body>
+
+</html>

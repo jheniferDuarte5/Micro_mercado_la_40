@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micromercado La 40 - Nuevo Producto</title>
+    <link rel="stylesheet" href="../style/registrar_productos.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="../../img/logo1.png" width="50%" alt="Logo Micromercado La 40">
+            </div>
+
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item"><i data-lucide="home"></i> Inicio</a>
+                <a href="productos.html" class="nav-item active"><i data-lucide="package"></i> Productos</a>
+                <a href="inventario.html" class="nav-item"><i data-lucide="archive"></i> Inventario</a>
+                <a href="nueva_entrada.html" class="nav-item"><i data-lucide="arrow-left-right"></i> Entradas</a>
+                <a href="nueva_salida.html" class="nav-item"><i data-lucide="arrow-up-right"></i> Salidas</a>
+                <a href="reportes.html" class="nav-item"><i data-lucide="bar-chart-3"></i> Reportes</a>
+                <a href="usuarios.html" class="nav-item"><i data-lucide="users"></i> Usuarios</a>
+                <a href="configuracion.html" class="nav-item"><i data-lucide="settings"></i> Configuración</a>
+            </nav>
+
+            <button class="logout-btn">
+                <i data-lucide="log-out"></i> Cerrar sesión
+            </button>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="welcome-text">
+                    <h1>Nuevo Producto</h1>
+                    <p>Completa la información del producto.</p>
+                </div>
+                <div class="user-profile">
+                    <div class="profile-info">
+                        <div class="avatar"><i data-lucide="user"></i></div>
+                        <span id="nombre-usuario">Usuario</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="card form-card">
+                <form id="product-form">
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="codigo">Código</label>
+                            <input type="text" id="codigo" placeholder="Ej. 7501234567890">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="proveedor">Proveedor</label>
+                            <div class="select-wrapper">
+                                <select name="proveedor" id="proveedor">
+                                    <option value="" disabled selected>Selecciona proveedor</option>
+                                    <option value="1">Juan Perez</option>
+                                    <option value="2">Maria Rodriguez</option>
+                                    <option value="3">Carlos Gomez</option>
+                                    <option value="4">Ana Martinez</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="nombre">Nombre del producto</label>
+                            <input type="text" id="nombre" placeholder="Ej. Arroz Diana (1kg)">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="categoria">Categoría</label>
+                            <div class="select-wrapper">
+                                <select id="categoria">
+                                    <option value="" disabled selected>Selecciona categoría</option>
+                                    <option value="abarrotes">Abarrotes</option>
+                                    <option value="lacteos">Lácteos</option>
+                                    <option value="bebidas">Bebidas</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="unidad">Unidad de medida</label>
+                            <div class="select-wrapper">
+                                <select id="medida">
+                                    <option value="" disabled selected>Selecciona unidad</option>
+                                    <option value="kg">Kilogramo (kg)</option>
+                                    <option value="litro">Litro (1L)</option>
+                                    <option value="unidad">Unidad (und)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group prefix-group">
+                            <label for="precio-venta">Precio de venta</label>
+                            <div class="input-prefix-container">
+                                <span class="input-prefix">$</span>
+                                <input type="number" id="precio-venta" placeholder="0" min="0">
+                            </div>
+                        </div>
+
+                        <div class="form-group prefix-group">
+                            <label for="precio-compra">Precio de compra</label>
+                            <div class="input-prefix-container">
+                                <span class="input-prefix">$</span>
+                                <input type="number" id="precio-compra" placeholder="0" min="0">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="stock">Stock</label>
+                            <input type="number" id="stock" placeholder="Cantidad" min="0">
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label>Estado</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="estado" value="activo" checked>
+                                    <span class="custom-radio"></span> Activo
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="estado" value="inactivo">
+                                    <span class="custom-radio"></span> Inactivo
+                                </label>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-cancel" id="btn-cancelar">Cancelar</button>
+                        <button type="submit" class="btn btn-save">
+                            <i data-lucide="save"></i> Guardar Producto
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <footer class="footer">
+                <p>&copy; 2026 Micromercado La 40. Todos los derechos reservados.</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../../backend/registrar_producto.js"></script>
+</body>
+
+</html>

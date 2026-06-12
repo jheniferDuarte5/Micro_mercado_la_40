@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micromercado La 40 - Configuración</title>
+    <link rel="stylesheet" href="../style/configuracion.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="../../img/logo1.png" width="50%" alt="Logo Micromercado La 40">
+            </div>
+
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item"><i data-lucide="home"></i> Inicio</a>
+                <a href="productos.html" class="nav-item "><i data-lucide="package"></i> Productos</a>
+                <a href="inventario.html" class="nav-item"><i data-lucide="archive"></i> Inventario</a>
+                <a href="nueva_entrada.html" class="nav-item"><i data-lucide="arrow-left-right"></i> Entradas</a>
+                <a href="nueva_salida.html" class="nav-item"><i data-lucide="arrow-up-right"></i> Salidas</a>
+                <a href="reportes.html" class="nav-item "><i data-lucide="bar-chart-3"></i> Reportes</a>
+                <a href="usuarios.html" class="nav-item"><i data-lucide="users"></i> Usuarios</a>
+                <a href="configuracion.html" class="nav-item active"><i data-lucide="settings"></i> Configuración</a>
+            </nav>
+
+            <button class="logout-btn">
+                <i data-lucide="log-out"></i> Cerrar sesión
+            </button>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="welcome-text">
+                    <h1>Configuración del Sistema</h1>
+                    <p>Gestiona los datos de tu negocio, preferencias globales y seguridad.</p>
+                </div>
+                <div class="user-profile">
+                    <div class="profile-info">
+                        <div class="avatar"><i data-lucide="user"></i></div>
+                        <span id="nombre-usuario">Usuario</span>
+                    </div>
+                </div>
+            </header>
+
+            <form id="form-configuracion">
+
+                <section class="card config-section">
+                    <div class="section-header">
+                        <i data-lucide="store" class="section-icon"></i>
+                        <div>
+                            <h2>Datos del Establecimiento</h2>
+                            <p>Información legal e institucional que aparecerá en reportes.</p>
+                        </div>
+                    </div>
+                    <div class="config-grid shadow-inner">
+                        <div class="form-group">
+                            <label for="biz-name">Nombre del negocio</label>
+                            <input type="text" id="biz-name" value="Micromercado La 40">
+                        </div>
+                        <div class="form-group">
+                            <label for="biz-nit">NIT / Identificación Comercial</label>
+                            <input type="text" id="biz-nit" value="901.432.587-1">
+                        </div>
+                        <div class="form-group">
+                            <label for="biz-phone">Teléfono de contacto</label>
+                            <input type="text" id="biz-phone" value="315 765 4321">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="biz-address">Dirección</label>
+                            <input type="text" id="biz-address" value="Calle 40 # 24 - 15, Aguachica">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card config-section">
+                    <div class="section-header">
+                        <i data-lucide="sliders" class="section-icon"></i>
+                        <div>
+                            <h2>Parámetros de Inventario</h2>
+                            <p>Configura las reglas dinámicas y formatos del sistema.</p>
+                        </div>
+                    </div>
+                    <div class="config-grid">
+                        <div class="form-group">
+                            <label for="sys-currency">Moneda por defecto</label>
+                            <div class="select-wrapper">
+                                <select id="sys-currency">
+                                    <option value="COP" selected>Peso Colombiano (COP)</option>
+                                    <option value="USD">Dólar Estadounidense (USD)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="sys-stock-alert">Umbral de Stock Mínimo Crítico</label>
+                            <div class="input-unit-wrapper">
+                                <input type="number" id="sys-stock-alert" value="5" min="1">
+                                <span class="input-unit">uds</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card config-section">
+                    <div class="section-header">
+                        <i data-lucide="lock" class="section-icon"></i>
+                        <div>
+                            <h2>Seguridad y Credenciales</h2>
+                            <p>Actualiza tu contraseña para mantener la cuenta protegida.</p>
+                        </div>
+                    </div>
+                    <div class="config-grid">
+                        <div class="form-group">
+                            <label for="pass-current">Contraseña actual</label>
+                            <input type="password" id="pass-current" placeholder="••••••••">
+                        </div>
+                        <div class="form-group">
+                            <label for="pass-new">Nueva contraseña</label>
+                            <input type="password" id="pass-new" placeholder="Mínimo 8 caracteres">
+                        </div>
+                        <div class="form-group">
+                            <label for="pass-confirm">Confirmar nueva contraseña</label>
+                            <input type="password" id="pass-confirm" placeholder="Repite la contraseña">
+                        </div>
+                    </div>
+                </section>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-cancel" id="btn-restablecer">Restablecer cambios</button>
+                    <button type="submit" class="btn btn-save">
+                        <span>Guardar Configuración</span> <i data-lucide="save"></i>
+                    </button>
+                </div>
+            </form>
+
+            <footer class="footer">
+                <div class="footer-content">
+                    <span class="leaf-left">🌿</span>
+                    <p>&copy; 2026 Micromercado La 40. Todos los derechos reservados.</p>
+                    <span class="leaf-right">🌿</span>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../../backend/configuracion.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micromercado La 40 - Dashboard</title>
+    <link rel="stylesheet" href="../style/dashboard.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="../../img/logo1.png" width="50%" alt="Logo Micromercado La 40">
+            </div>
+
+            <nav class="nav-menu">
+                <a href="dashboard_emp.html" class="nav-item active"><i data-lucide="home"></i> Inicio</a>
+                <a href="nueva_salida_emp.html" class="nav-item"><i data-lucide="arrow-up-right"></i> Salidas</a>
+            </nav>
+
+            <button class="logout-btn">
+                <i data-lucide="log-out"></i> Cerrar sesión
+            </button>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="welcome-text">
+                    <h1 id="welcome-nombre">¡Bienvenido!</h1>
+                    <p>Aquí tienes un resumen general de tu inventario.</p>
+                </div>
+                <div class="user-profile">
+                    <div class="profile-info">
+                        <div class="avatar"><i data-lucide="user"></i></div>
+                        <span id="nombre-usuario">Usuario</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="kpi-grid">
+                <div class="card kpi-card">
+                    <div class="kpi-info">
+                        <h3>Total Productos</h3>
+                        <p class="kpi-value" id="kpi-total-productos">128</p>
+                    </div>
+                    <div class="kpi-icon-wrapper green">
+                        <i data-lucide="box"></i>
+                    </div>
+                </div>
+
+                <div class="card kpi-card">
+                    <div class="kpi-info">
+                        <h3>Entradas (Hoy)</h3>
+                        <p class="kpi-value" id="kpi-entradas-hoy">15</p>
+                    </div>
+                    <div class="kpi-icon-wrapper blue">
+                        <i data-lucide="arrow-down"></i>
+                    </div>
+                </div>
+
+                <div class="card kpi-card">
+                    <div class="kpi-info">
+                        <h3>Salidas (Hoy)</h3>
+                        <p class="kpi-value" id="kpi-salidas-hoy">8</p>
+                    </div>
+                    <div class="kpi-icon-wrapper orange">
+                        <i data-lucide="arrow-up"></i>
+                    </div>
+                </div>
+
+                <div class="card kpi-card">
+                    <div class="kpi-info">
+                        <h3>Productos Bajos</h3>
+                        <p class="kpi-value" id="kpi-productos-bajos">12</p>
+                    </div>
+                    <div class="kpi-icon-wrapper yellow">
+                        <i data-lucide="alert-triangle"></i>
+                    </div>
+                </div>
+            </section>
+
+            <section class="data-grid">
+                <div class="card table-card">
+                    <h2>Productos más vendidos</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th class="text-right">Ventas</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-mas-vendidos">
+                            <tr>
+                                <td colspan="2" class="text-center">Cargando...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card table-card">
+                    <h2>Stock bajo</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th class="text-right">Stock</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-stock-bajo">
+                            <tr>
+                                <td colspan="2" class="text-center">Cargando...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <p>&copy; 2026 Micromercado La 40. Todos los derechos reservados.</p>
+            </footer>
+        </main>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../../backend/dahsboard.js"></script>
+</body>
+
+</html>

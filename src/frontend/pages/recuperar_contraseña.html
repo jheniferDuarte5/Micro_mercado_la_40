@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Micromercado La 40 - Recuperar Acceso</title>
+  <link rel="stylesheet" href="../style/recuperar_contraseña.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+  <!-- ===== FONDO DECORATIVO ===== -->
+  <div class="bg-blob blob-top-left"></div>
+  <div class="bg-blob blob-bottom-left"></div>
+
+  <!-- ===== HOJA DECORATIVA IZQUIERDA ===== -->
+  <div class="leaf-deco leaf-top">
+    <svg viewBox="0 0 220 380" xmlns="http://www.w3.org/2000/svg">
+      <path d="M110 360 C60 280 10 200 40 110 C60 50 130 10 160 60 C200 120 180 230 110 360Z" fill="#a8c5a0"
+        opacity="0.45" />
+      <path d="M90 340 C50 260 20 180 55 100 C75 45 140 20 165 75 C195 135 170 240 90 340Z" fill="#c5dbbe"
+        opacity="0.35" />
+      <path d="M130 350 C85 275 55 195 80 115 C100 60 165 30 185 80 C210 140 185 245 130 350Z" fill="#8db88a"
+        opacity="0.30" />
+    </svg>
+  </div>
+  <div class="leaf-deco leaf-bottom">
+    <svg viewBox="0 0 200 320" xmlns="http://www.w3.org/2000/svg">
+      <path d="M100 10 C55 80 10 160 35 250 C55 310 130 340 155 290 C185 230 165 130 100 10Z" fill="#a8c5a0"
+        opacity="0.45" />
+      <path d="M80 20 C40 90 15 170 45 255 C65 310 135 335 158 285 C185 225 160 125 80 20Z" fill="#c5dbbe"
+        opacity="0.30" />
+    </svg>
+  </div>
+
+  <!-- ===== CONTENEDOR PRINCIPAL ===== -->
+  <main class="layout">
+
+    <!-- ---- PANEL IZQUIERDO (marca) ---- -->
+    <section class="brand-panel">
+      <img src="../../img/logo1.png" alt="Logo Micromercado La 40" class="logo"
+        style="width: 400px; margin-left: 40px;" />
+    </section>
+
+    <!-- ---- PANEL DERECHO (formulario) ---- -->
+    <section class="form-panel">
+
+      <div class="auth-container">
+        <div class="auth-card">
+          <div class="auth-header">
+            <i data-lucide="key-round" class="header-icon"></i>
+            <h2>Recuperar Contraseña</h2>
+            <p>Ingresa tu correo y te mostraremos tu clave registrada.</p>
+          </div>
+
+          <form id="form-recuperar">
+            <div class="form-group">
+              <label for="rec-email">Correo Electrónico</label>
+              <input type="email" id="rec-email" placeholder="correo@la40.com" required>
+            </div>
+
+            <button type="submit" class="btn-auth">
+              Consultar Clave <i data-lucide="search"></i>
+            </button>
+          </form>
+
+          <div id="resultado-recuperacion" class="result-box hidden">
+            <p>Tu contraseña es: <strong id="clave-encontrada"></strong></p>
+          </div>
+
+          <div class="auth-footer">
+            <p><a href="../../../index.html"><i data-lucide="arrow-left"></i> Volver al Login</a></p>
+          </div>
+        </div>
+      </div>
+
+
+      <p style="padding-right: 80px;;" class="footer-copy">© 2026 Micromercado La 40. Todos los derechos reservados.</p>
+    </section>
+
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="module" src="../../backend/recuperar_contraseña.js"></script>
+</body>
+
+</html>

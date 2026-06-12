@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micromercado La 40 - Nueva Salida</title>
+    <link rel="stylesheet" href="../style/nueva_salida.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="../../img/logo1.png" width="50%" alt="Logo Micromercado La 40">
+            </div>
+
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item"><i data-lucide="home"></i> Inicio</a>
+                <a href="productos.html" class="nav-item "><i data-lucide="package"></i> Productos</a>
+                <a href="inventario.html" class="nav-item"><i data-lucide="archive"></i> Inventario</a>
+                <a href="nueva_entrada.html" class="nav-item"><i data-lucide="arrow-left-right"></i> Entradas</a>
+                <a href="nueva_salida.html" class="nav-item active"><i data-lucide="arrow-up-right"></i> Salidas</a>
+                <a href="reportes.html" class="nav-item"><i data-lucide="bar-chart-3"></i> Reportes</a>
+                <a href="usuarios.html" class="nav-item"><i data-lucide="users"></i> Usuarios</a>
+                <a href="configuracion.html" class="nav-item"><i data-lucide="settings"></i> Configuración</a>
+            </nav>
+
+            <button class="logout-btn">
+                <i data-lucide="log-out"></i> Cerrar sesión
+            </button>
+        </aside>
+
+
+        <main class="main-content">
+            <header class="header">
+                <div class="welcome-text">
+                    <h1>Nueva Salida</h1>
+                    <p>Registra productos que salen del inventario.</p>
+                </div>
+                <div class="user-profile">
+                    <div class="profile-info">
+                        <div class="avatar"><i data-lucide="user"></i></div>
+                        <span id="nombre-usuario">Usuario</span>
+                    </div>
+                </div>
+            </header>
+
+            <form id="form-nueva-salida">
+
+                <section class="card meta-card">
+                    <div class="meta-grid">
+                        <div class="form-group">
+                            <label for="num-salida">Número de salida</label>
+                            <input type="text" id="num-salida" value="SAL-00045" readonly class="input-readonly">
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha-salida">Fecha</label>
+                            <div class="input-icon-wrapper">
+                                <input type="date" id="fecha-salida" value="2026-05-18">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="motivo-salida">Motivo</label>
+                            <div class="select-wrapper">
+                                <select id="motivo-salida">
+                                    <option value="venta" selected>Venta</option>
+                                    <option value="daño">Producto Dañado / Vencido</option>
+                                    <option value="ajuste">Ajuste de Inventario</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card products-card">
+                    <h2 class="section-title">Productos</h2>
+
+                    <div class="table-responsive">
+                        <table class="transaction-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 45%;">Producto</th>
+                                    <th style="width: 15%;">Cantidad</th>
+                                    <th style="width: 20%;">Precio de venta</th>
+                                    <th style="width: 12%;">Total</th>
+                                    <th style="width: 8%;" class="text-center">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="products-tbody">
+                                <tr>
+                                    <td>
+                                        <div class="select-wrapper">
+                                            <select class="select-product">
+                                                <option value="" disabled selected>Selecciona producto</option>
+                                                <option value="P001" data-price="4200">Arroz Diana (1kg)</option>
+                                                <option value="P002" data-price="8900">Aceite Girasol (900ml)</option>
+                                                <option value="P003" data-price="3400">Leche Entera (1L)</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="number" class="input-qty" value="0" min="0">
+                                    </td>
+                                    <td>
+                                        <div class="currency-display">$ <span class="unit-price">0</span></div>
+                                    </td>
+                                    <td>
+                                        <div class="currency-total bold">$ <span class="row-total">0</span></div>
+                                    </td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn-delete-row" title="Eliminar fila">
+                                            <i data-lucide="trash-2"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="select-wrapper">
+                                            <select class="select-product">
+                                                <option value="" disabled selected>Selecciona producto</option>
+                                                <option value="P001" data-price="4200">Arroz Diana (1kg)</option>
+                                                <option value="P002" data-price="8900">Aceite Girasol (900ml)</option>
+                                                <option value="P003" data-price="3400">Leche Entera (1L)</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="number" class="input-qty" value="0" min="0">
+                                    </td>
+                                    <td>
+                                        <div class="currency-display">$ <span class="unit-price">0</span></div>
+                                    </td>
+                                    <td>
+                                        <div class="currency-total bold">$ <span class="row-total">0</span></div>
+                                    </td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn-delete-row" title="Eliminar fila">
+                                            <i data-lucide="trash-2"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-actions-footer">
+                        <button type="button" class="btn btn-add-row" id="btn-add-item">
+                            <i data-lucide="plus"></i> Agregar producto
+                        </button>
+
+                        <div class="grand-total-box">
+                            <span class="total-label">Total de la salida:</span>
+                            <span class="total-amount bold">$ <span id="grand-total">0</span></span>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-cancel" id="btn-cancelar">Cancelar</button>
+                    <button type="submit" class="btn btn-save">
+                        <span>Guardar Salida</span> <i data-lucide="save"></i>
+                    </button>
+                </div>
+            </form>
+
+            <footer class="footer">
+                <div class="footer-content">
+                    <span class="leaf-left">🌿</span>
+                    <p>&copy; 2026 Micromercado La 40. Todos los derechos reservados.</p>
+                    <span class="leaf-right">🌿</span>
+                </div>
+            </footer>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../../backend/nueva_salida.js"></script>
+</body>
+
+</html>

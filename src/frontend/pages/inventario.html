@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micromercado La 40 - Inventario</title>
+    <link rel="stylesheet" href="../style/inventario.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="../../img/logo1.png" width="50%" alt="Logo Micromercado La 40">
+            </div>
+
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item"><i data-lucide="home"></i> Inicio</a>
+                <a href="productos.html" class="nav-item "><i data-lucide="package"></i> Productos</a>
+                <a href="inventario.html" class="nav-item active"><i data-lucide="archive"></i> Inventario</a>
+                <a href="nueva_entrada.html" class="nav-item"><i data-lucide="arrow-left-right"></i> Entradas</a>
+                <a href="nueva_salida.html" class="nav-item"><i data-lucide="arrow-up-right"></i> Salidas</a>
+                <a href="reportes.html" class="nav-item"><i data-lucide="bar-chart-3"></i> Reportes</a>
+                <a href="usuarios.html" class="nav-item"><i data-lucide="users"></i> Usuarios</a>
+                <a href="configuracion.html" class="nav-item"><i data-lucide="settings"></i> Configuración</a>
+            </nav>
+
+            <button class="logout-btn">
+                <i data-lucide="log-out"></i> Cerrar sesión
+            </button>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="welcome-text">
+                    <h1>Control de Inventario</h1>
+                    <p>Monitorea existencias, costos y rotación en tiempo real.</p>
+                </div>
+                <div class="user-profile">
+                    <div class="profile-info">
+                        <div class="avatar"><i data-lucide="user"></i></div>
+                        <span id="nombre-usuario">Usuario</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="toolbar">
+                <div class="filters-container">
+                    <div class="search-container">
+                        <i data-lucide="search" class="search-icon"></i>
+                        <input type="text" id="search-inventario" placeholder="Buscar por producto o código...">
+                    </div>
+                    <div class="select-wrapper">
+                        <select id="filter-stock">
+                            <option value="todos">Todos los niveles</option>
+                            <option value="bajo">Stock Bajo / Crítico</option>
+                            <option value="ok">Stock Óptimo</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-report" id="btn-exportar">
+                    <i data-lucide="download"></i> Exportar Reporte
+                </button>
+            </section>
+
+            <section class="card table-container">
+                <table class="main-table">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Producto</th>
+                            <th>Precio Compra</th>
+                            <th>Precio Venta</th>
+                            <th>Stock Actual</th>
+                            <th>Valor Total (Costo)</th>
+                            <th class="text-center">Alerta</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <tr>
+                            <td>P001</td>
+                            <td class="bold">Arroz Diana (1kg)</td>
+                            <td>$ 3.500</td>
+                            <td>$ 4.200</td>
+                            <td>25</td>
+                            <td class="bold">$ 87.500</td>
+                            <td class="text-center"><span class="alert-badge status-ok">Normal</span></td>
+                        </tr>
+                        <tr>
+                            <td>P002</td>
+                            <td class="bold">Aceite Girasol (900ml)</td>
+                            <td>$ 7.200</td>
+                            <td>$ 8.900</td>
+                            <td>18</td>
+                            <td class="bold">$ 129.600</td>
+                            <td class="text-center"><span class="alert-badge status-ok">Normal</span></td>
+                        </tr>
+                        <tr>
+                            <td>P003</td>
+                            <td class="bold">Leche Entera (1L)</td>
+                            <td>$ 2.800</td>
+                            <td>$ 3.400</td>
+                            <td>5</td>
+                            <td class="bold">$ 14.000</td>
+                            <td class="text-center"><span class="alert-badge status-low">Stock Bajo</span></td>
+                        </tr>
+                        <tr>
+                            <td>P004</td>
+                            <td class="bold">Azúcar La Muñeca (1kg)</td>
+                            <td>$ 2.900</td>
+                            <td>$ 3.600</td>
+                            <td>12</td>
+                            <td class="bold">$ 34.800</td>
+                            <td class="text-center"><span class="alert-badge status-ok">Normal</span></td>
+                        </tr>
+                        <tr>
+                            <td>P005</td>
+                            <td class="bold">Salsa de Tomate (200g)</td>
+                            <td>$ 1.800</td>
+                            <td>$ 2.400</td>
+                            <td>0</td>
+                            <td class="bold">$ 0</td>
+                            <td class="text-center"><span class="alert-badge status-critical">Agotado</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+
+
+            <footer class="footer">
+                <div class="footer-content">
+                    <span class="leaf-left">🌿</span>
+                    <p>&copy; 2026 Micromercado La 40. Todos los derechos reservados.</p>
+                    <span class="leaf-right">🌿</span>
+                </div>
+            </footer>
+        </main>
+    </div>
+    >
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../../backend/inventario.js"></script>
+</body>
+
+</html>

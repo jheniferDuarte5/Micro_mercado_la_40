@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micromercado La 40 - Estado de Productos</title>
+    <link rel="stylesheet" href="../style/estado_productos.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="../../img/logo1.png" width="50%" alt="Logo Micromercado La 40">
+            </div>
+
+
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item"><i data-lucide="home"></i> Inicio</a>
+                <a href="productos.html" class="nav-item active"><i data-lucide="package"></i> Productos</a>
+                <a href="inventario.html" class="nav-item"><i data-lucide="archive"></i> Inventario</a>
+                <a href="nueva_entrada.html" class="nav-item"><i data-lucide="arrow-left-right"></i> Entradas</a>
+                <a href="nueva_salida.html" class="nav-item"><i data-lucide="arrow-up-right"></i> Salidas</a>
+                <a href="reportes.html" class="nav-item"><i data-lucide="bar-chart-3"></i> Reportes</a>
+                <a href="usuarios.html" class="nav-item"><i data-lucide="users"></i> Usuarios</a>
+                <a href="configuracion.html" class="nav-item"><i data-lucide="settings"></i> Configuración</a>
+            </nav>
+
+            <button class="logout-btn">
+                <i data-lucide="log-out"></i> Cerrar sesión
+            </button>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="welcome-text">
+                    <h1>Deshabilitar / Suspender Producto</h1>
+                    <p>Administra el estado de tus productos.</p>
+                </div>
+                <div class="user-profile">
+                    <div class="profile-info">
+                        <div class="avatar"><i data-lucide="user"></i></div>
+                        <span id="nombre-usuario">Usuario</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="card table-container">
+                <table class="status-table">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Producto</th>
+                            <th>Categoría</th>
+                            <th>Stock</th>
+                            <th>Estado</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="pagination-container">
+                <span class="pagination-info">Mostrando 1 a 6 de 6 productos</span>
+                <div class="pagination-controls">
+                    <button class="page-btn nav-btn" disabled><i data-lucide="chevron-left"></i></button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn nav-btn" disabled><i data-lucide="chevron-right"></i></button>
+                    <br>
+                    <button type="button" class="btn btn-cancel" id="btn-cancelar">Regresar</button>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <p>&copy; 2026 Micromercado La 40. Todos los derechos reservados.</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../../backend/estado_productos.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micromercado La 40 - Reportes</title>
+    <link rel="stylesheet" href="../style/reportes.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="../../img/logo1.png" width="50%" alt="Logo Micromercado La 40">
+            </div>
+
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item"><i data-lucide="home"></i> Inicio</a>
+                <a href="productos.html" class="nav-item "><i data-lucide="package"></i> Productos</a>
+                <a href="inventario.html" class="nav-item"><i data-lucide="archive"></i> Inventario</a>
+                <a href="nueva_entrada.html" class="nav-item"><i data-lucide="arrow-left-right"></i> Entradas</a>
+                <a href="nueva_salida.html" class="nav-item"><i data-lucide="arrow-up-right"></i> Salidas</a>
+                <a href="reportes.html" class="nav-item active"><i data-lucide="bar-chart-3"></i> Reportes</a>
+                <a href="usuarios.html" class="nav-item"><i data-lucide="users"></i> Usuarios</a>
+                <a href="configuracion.html" class="nav-item"><i data-lucide="settings"></i> Configuración</a>
+            </nav>
+
+            <button class="logout-btn">
+                <i data-lucide="log-out"></i> Cerrar sesión
+            </button>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="welcome-text">
+                    <h1>Reportes y Estadísticas</h1>
+                    <p>Analiza el rendimiento, ventas y movimientos de tu negocio.</p>
+                </div>
+                <div class="user-profile">
+                    <div class="profile-info">
+                        <div class="avatar"><i data-lucide="user"></i></div>
+                        <span id="nombre-usuario">Usuario</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="toolbar">
+                <div class="filters-container">
+                    <div class="form-group-inline">
+                        <label for="fecha-inicio">Desde:</label>
+                        <input type="date" id="fecha-inicio" value="2026-05-01">
+                    </div>
+                    <div class="form-group-inline">
+                        <label for="fecha-fin">Hasta:</label>
+                        <input type="date" id="fecha-fin" value="2026-05-15">
+                    </div>
+                    <button class="btn btn-filter" id="btn-generar">
+                        <i data-lucide="refresh-cw"></i> Actualizar
+                    </button>
+                </div>
+                <button class="btn btn-export" id="btn-exportar-pdf">
+                    <i data-lucide="file-text"></i> Exportar PDF
+                </button>
+            </section>
+
+            <section class="kpi-grid">
+                <div class="card kpi-card">
+                    <div class="kpi-icon icon-sales">
+                        <i data-lucide="trending-up"></i>
+                    </div>
+                    <div class="kpi-info">
+                        <h3>Total Salidas / Ventas</h3>
+                        <p class="kpi-value" id="kpi-ventas">$ 0</p>
+                        <span class="kpi-subtext">En el rango seleccionado</span>
+                    </div>
+                </div>
+
+                <div class="card kpi-card">
+                    <div class="kpi-icon icon-investment">
+                        <i data-lucide="dollar-sign"></i>
+                    </div>
+                    <div class="kpi-info">
+                        <h3>Inversión en Inventario</h3>
+                        <p class="kpi-value" id="kpi-inversion">$ 0</p>
+                        <span class="kpi-subtext">Valor total del stock actual</span>
+                    </div>
+                </div>
+
+                <div class="card kpi-card">
+                    <div class="kpi-icon icon-alerts">
+                        <i data-lucide="alert-triangle"></i>
+                    </div>
+                    <div class="kpi-info">
+                        <h3>Productos Críticos</h3>
+                        <p class="kpi-value" id="kpi-criticos">0</p>
+                        <span class="kpi-subtext">Requieren reabastecimiento</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card table-container">
+                <h2 class="section-title">Productos con Mayor Rotación (Más Vendidos)</h2>
+                <table class="report-table">
+                    <thead>
+                        <tr>
+                            <th>Ranking</th>
+                            <th>Código</th>
+                            <th>Producto</th>
+                            <th>Categoría</th>
+                            <th class="text-center">Unidades Vendidas</th>
+                            <th>Total Recaudado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="report-table-body">
+                        <!-- Las filas dinámicas se inyectan aquí -->
+                    </tbody>
+                </table>
+            </section>
+
+            <footer class="footer">
+                <div class="footer-content">
+                    <span class="leaf-left">🌿</span>
+                    <p>&copy; 2026 Micromercado La 40. Todos los derechos reservados.</p>
+                    <span class="leaf-right">🌿</span>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../../backend/reportes.js"></script>
+</body>
+
+</html>

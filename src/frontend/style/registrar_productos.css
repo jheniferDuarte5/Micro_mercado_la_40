@@ -1,0 +1,331 @@
+/* --- CONFIGURACIÓN GENERAL --- */
+:root {
+    --bg-primary: #f8f9fa;
+    --bg-sidebar: #ffffff;
+    --text-main: #333333;
+    --text-muted: #7e7e7e;
+    --green-theme: #e8f5e9;
+    --green-dark: #386f38;
+    --green-button: #437c43;
+    --border-color: #eaeaea;
+    --input-border: #e2e8f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- BARRA LATERAL (SIDEBAR) --- */
+.sidebar {
+    width: 260px;
+    background-color: var(--bg-sidebar);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    position: fixed;
+    height: 100vh;
+}
+
+.logo-container {
+    padding-bottom: 24px;
+    margin-bottom: 10px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-placeholder {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--green-dark);
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.logo-placeholder i {
+    width: 32px;
+    height: 32px;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-grow: 1;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 8px;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 400;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.nav-item i {
+    width: 10px;
+    height: 10px;
+}
+
+.nav-item:hover {
+    background-color: #f5f5f5;
+    color: var(--text-main);
+}
+
+.nav-item.active {
+    background-color: var(--green-theme);
+    color: var(--green-dark);
+}
+
+.dropdown {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dropdown-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Botón cerrar sesión */
+.logout-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--green-theme);
+    color: var(--green-dark);
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: background 0.2s;
+}
+
+.logout-btn:hover {
+    background-color: #dcedc8;
+}
+
+/* --- CONTENIDO PRINCIPAL --- */
+.main-content {
+    margin-left: 260px; /* Desplazamiento por la barra fija */
+    flex-grow: 1;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Encabezado */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.welcome-text h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 4px; }
+.welcome-text p { color: var(--text-muted); font-size: 0.9rem; }
+
+.user-profile { display: flex; align-items: center; gap: 24px; }
+.notification-icon { position: relative; cursor: pointer; color: var(--text-muted); }
+.notification-icon .badge { position: absolute; top: -2px; right: -2px; width: 8px; height: 8px; background-color: #ff5252; border-radius: 50%; }
+.profile-info { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+}
+
+/* Tarjeta Formulario */
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    padding: 32px;
+}
+
+/* Grid del Formulario (2 columnas nativas) */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 18px;
+    row-gap: 8px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    background-color: #ffffff;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input::placeholder {
+    color: #a0aec0;
+}
+
+input:focus, select:focus {
+    border-color: #a0aec0;
+}
+
+/* Campos con prefijo ($) */
+.input-prefix-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.input-prefix {
+    position: absolute;
+    left: 16px;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+.prefix-group input {
+    padding-left: 32px;
+}
+
+/* Inputs de tipo Radio */
+.radio-group {
+    display: flex;
+    gap: 24px;
+    margin-top: 4px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Ocultar flecha nativa de select y personalizar de forma limpia */
+.select-wrapper {
+    position: relative;
+}
+.select-wrapper::after {
+    content: "▼";
+    font-size: 0.7rem;
+    color: #718096;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+select {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+/* Botones de Acción */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    border-top: 1px solid #f1f5f9;
+
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+}
+
+.btn-cancel {
+    background-color: #ffffff;
+    color: #4a5568;
+    border: 1px solid var(--input-border);
+}
+
+.btn-cancel:hover {
+    background-color: #f7fafc;
+}
+
+.btn-save {
+    background-color: var(--green-button);
+    color: #ffffff;
+    border: none;
+}
+
+.btn-save:hover {
+    background-color: #356335;
+}
+
+.btn-save i {
+    width: 18px;
+    height: 18px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 10px 0;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: auto;
+}
